@@ -27,48 +27,7 @@ data_structure = [
   "Hello",
   ((), [{(2, 'Urban', ('Urban2', 35))}])
 ]
+
 calc = 0
 result = calculate_structure_sum(data_structure)
 print(result)
-
-
-# ВАРИАНТ 1
-# def unpack(*args, **kwargs):
-#     global calc
-#     for i in args:
-#         # print(i)
-#         if isinstance(i, int):
-#             calc += i
-#         elif isinstance(i, str):
-#             calc += len(i)
-#         else:
-#             unpack(*i)
-#     return calc
-
-
-# calc = 0
-# a = [{(2, 'Urban', ('Urban2', 35))}]
-# print(unpack(a))
-
-# ВАРИАНТ 2
-# def unpack(*args, **kwargs):
-#     global calc
-#     for i in range(len(args)):
-#         el = args[i]
-#         # print(el)
-#         if isinstance(el, int):
-#             calc += el
-#             continue
-#         elif isinstance(el, str):
-#             calc += len(el)
-#             continue
-#         else:
-#             unpack(*el)
-#
-#
-#     return calc
-#
-#
-# calc = 0
-# a = [{(2, 'Urban', ('Urban2', 35))}]
-# print(unpack(a))
