@@ -1,18 +1,20 @@
 def calculate_structure_sum(*args):
     global calc
-    for i in args:
-        if isinstance(i, int):
-            calc += i
-            continue
-        if isinstance(i, str):
-            calc += len(i)
-            continue
-        if isinstance(i, dict):
-            dict_zip = zip(i.keys(), i.values())
-            calculate_structure_sum(*dict_zip)
-        else:
-            calculate_structure_sum(*i)
-    return calc
+    while args:
+        for i in args:
+            if isinstance(i, int):
+                calc += i
+                continue
+            if isinstance(i, str):
+                calc += len(i)
+                continue
+            if isinstance(i, dict):
+                dict_zip = zip(i.keys(), i.values())
+                calculate_structure_sum(*dict_zip)
+                continue
+            else:
+                calculate_structure_sum(*i)
+        return calc
 
 
 data_structure = [
