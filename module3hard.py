@@ -9,8 +9,8 @@ def calculate_structure_sum(*args):
                 calc += len(i)
                 continue
             if isinstance(i, dict):
-                dict_zip = zip(*i.items())
-                calculate_structure_sum(*dict_zip)
+                dict_zip = zip(i.items())
+                calculate_structure_sum(dict_zip)
                 continue
             else:
                 calculate_structure_sum(*i)
